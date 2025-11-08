@@ -1,9 +1,9 @@
 body {
-    display: flex; /* Ativa o modelo Flexbox, um sistema de layout moderno. Ele permite alinhar elementos filhos (no caso, a .container) com facilidade. */
-    justify-content: center; /* Alinha o conteúdo horizontalmente (no eixo X) no centro da tela. */
-    align-items: center; /* Alinha o conteúdo verticalmente (no eixo Y) no centro da tela. */
-    margin: 0; /* Remove a margem padrão que todo navegador aplica no body. Sem isso, o conteúdo nunca fica 100% centralizado na tela. */
-    min-height: 100vh; /* Faz o body ocupar 100% da altura visível da janela do navegador (viewport height). Assim, conseguimos centralizar mesmo que o conteúdo seja pequeno. */
+    display: flex; /* Alinha elementos filhos no centro */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-image: url(../imagens/relogioback.png);
     background-size: cover;
@@ -12,27 +12,27 @@ body {
 }
 
 .container {
-    font-size: 35px;
-    margin-bottom: 80px;
+    font-size: 2rem;
+    margin-bottom: 5rem; 
     color: #ffffff;
     text-align: center;
-    line-height: 50px;
+    line-height: 1.5rem;
     border-radius: 50px;
     background-color: rgba(255,0,255,0.1);
-    padding: 30px;
+    padding: 2rem;
 }
 
 .header {
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 50px;
-    padding: 20px;
+    font-size: 3rem; 
+    padding: 1rem;
     color: rgba(255, 255, 255, 0.1);
 }
 
 .button {
-  padding: 15px 40px;
-  font-size: 22px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem; 
   background-color: #25002e;
   border: 1px solid #ff00ff;
   color: #fff;
@@ -48,7 +48,7 @@ body {
 }
 
 .button.active {
-  background-color: #00e1ff; /* verde neon */
+  background-color: #00e1ff;
   color: #000;
   border-color: #0037ff;
   box-shadow: 0 0 15px #0037ff, 0 0 30px #0037ff;
@@ -57,16 +57,18 @@ body {
 .buttons-container {
   display: flex;
   justify-content: center;
-  gap: 30px; /* Espaçamento entre os botões */
-  margin-top: 30px;
+  gap: 1rem; 
+  margin-top: 2rem; 
+  flex-wrap: wrap; /* permite quebrar linha em telas pequenas */
 }
 
 #display {
-  font-size: 80px; /* Aumente esse valor como quiser */
-  font-weight: bold; /* deixa o número mais forte */
-  color: white; /* ou qualquer cor que combine com seu tema */
-  margin: 50px;
+  font-size: clamp(2rem, 10vw, 5rem);
+  font-weight: bold;
+  color: white;
+  margin: 3rem 0; 
   text-shadow: #fff;
+  text-align: center;
 }
 
 .neon {
@@ -83,7 +85,9 @@ body {
 
 .neon .bottom {
     display: block;
+    padding: 8%;
 }
 
-
-
+/* -------------------------
+   MEDIA QUERIES PARA RESPONSIVIDADE
+-----------
