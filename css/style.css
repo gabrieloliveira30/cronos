@@ -12,70 +12,77 @@ body {
 }
 
 .container {
-    font-size: 2rem;
-    margin-bottom: 5rem;
+    width: 90%;
+    max-width: 500px;
+    font-size: clamp(1rem, 4vw, 2rem);
+    margin-bottom: clamp(2rem, 5vh, 5rem);
     color: #ffffff;
     text-align: center;
-    line-height: 1.5rem;
+    line-height: clamp(1.2rem, 4vw, 1.5rem);
     border-radius: 50px;
     background-color: rgba(255,0,255,0.1);
-    padding: 2rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    box-sizing: border-box;
 }
 
 .header {
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 3rem;
-    padding: 1rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    padding: clamp(0.5rem, 2vw, 1rem);
     color: rgba(255, 255, 255, 0.1);
 }
 
 .button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  background-color: #25002e;
-  border: 1px solid #ff00ff;
-  color: #fff;
-  border-radius: 12px;
-  transition: 0.3s;
-  cursor: pointer;
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+    background-color: #25002e;
+    border: 1px solid #ff00ff;
+    color: #fff;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+    flex: 1 1 40%; /* permite que cada botão ocupe até 40% do container e quebre linha se necessário */
+    min-width: 120px;
+    box-sizing: border-box;
 }
 
 .button:hover {
-  background-color: #00e1ff;
-  color: #1100ff;
-  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00eeff;
+    background-color: #00e1ff;
+    color: #1100ff;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #00eeff;
 }
 
 .button.active {
-  background-color: #00e1ff;
-  color: #000;
-  border-color: #0037ff;
-  box-shadow: 0 0 15px #0037ff, 0 0 30px #0037ff;
+    background-color: #00e1ff;
+    color: #000;
+    border-color: #0037ff;
+    box-shadow: 0 0 15px #0037ff, 0 0 30px #0037ff;
 }
 
 .buttons-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.5rem, 3vw, 1rem);
+    margin-top: clamp(1rem, 3vh, 2rem);
+    flex-wrap: wrap;
 }
 
 #display {
-  font-size: clamp(2rem, 10vw, 5rem);
-  font-weight: bold;
-  color: white;
-  margin: 3rem 0;
-  text-shadow: #fff;
-  text-align: center;
+    font-size: clamp(2rem, 10vw, 5rem);
+    font-weight: bold;
+    color: white;
+    margin: clamp(1.5rem, 5vh, 3rem) 0;
+    text-shadow: #fff;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 .neon {
-  text-align: center;
-  color: #fff;
-  font-size: 4rem;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    text-align: center;
+    color: #fff;
+    font-size: clamp(2rem, 8vw, 4rem);
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
 }
 
 .neon .top {
@@ -87,82 +94,33 @@ body {
     display: block;
 }
 
-@media (max-width: 1024px) {
-    .container {
-        padding: 1.8rem;
-        font-size: 1.8rem;
-        margin-bottom: 4rem;
-    }
-
-    .header {
-        font-size: 2.5rem;
-        padding: 0.8rem;
-    }
-
-    #display {
-        font-size: 4rem;
-        margin: 2.5rem 0;
-    }
-
-    .button {
-        padding: 0.9rem 1.8rem;
-        font-size: 1.1rem;
-    }
-
-    .buttons-container {
-        gap: 0.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 1.5rem;
-        font-size: 1.5rem;
-        margin-bottom: 3rem;
-    }
-
-    .header {
-        font-size: 2rem;
-        padding: 0.7rem;
-    }
-
-    #display {
-        font-size: 3rem;
-        margin: 2rem 0;
-    }
-
-    .button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .buttons-container {
-        gap: 0.7rem;
-    }
-}
-
 @media (max-width: 480px) {
     .container {
-        font-size: 1.2rem;
-        padding: 1rem;
-        margin-bottom: 2rem;
+        font-size: 1rem;
+        padding: 0.8rem;
+        margin-bottom: 1.5rem;
     }
 
     .header {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     #display {
-        font-size: 2.5rem;
-        margin: 1.5rem 0;
+        font-size: 2rem;
+        margin: 1rem 0;
     }
 
     .button {
-        padding: 0.5rem 1rem;
+        flex: 1 1 100%; /* cada botão ocupa 100% em telas muito pequenas */
+        padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
     }
 
     .buttons-container {
         gap: 0.5rem;
+    }
+
+    .neon {
+        font-size: 2rem;
     }
 }
